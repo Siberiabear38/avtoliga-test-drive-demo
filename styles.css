@@ -37,9 +37,11 @@ a{color:inherit;text-underline-offset:2px}
 .form-status[data-state="pending"]{color:var(--muted)}
 .demo-notice{color:var(--muted);font-size:12px;line-height:18px}
 .honeypot{position:absolute;width:1px;height:1px;overflow:clip;clip-path:inset(50%);white-space:nowrap}
-.ride-card{margin-top:20px;overflow:clip;border-radius:12px;background:var(--blue);padding:18px 10px 10px}
-.ride-card h2{font-size:24px;font-weight:500;line-height:36px;text-align:center;color:var(--paper);margin:0 0 10px}
-.ride-car{display:block;width:100%;height:auto;aspect-ratio:590/254;object-fit:contain;border-radius:7px;background:#f8f7f4}
+.ride-card{margin-top:24px;overflow:clip;border-radius:12px;background:var(--blue);color:var(--paper)}
+.ride-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#dbe1e6}
+.ride-caption{padding:18px 20px 20px}
+.ride-card h2{font-size:24px;font-weight:500;line-height:32px;letter-spacing:-.5px;margin:0 0 8px}
+.ride-caption p{font-size:13px;line-height:20px;color:#eef1ff}
 .benefits{margin-top:28px}
 .benefits h2{font-size:20px;font-weight:500;line-height:24px;margin-bottom:14px}
 .benefit-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
