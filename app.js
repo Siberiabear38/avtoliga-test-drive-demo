@@ -4,7 +4,7 @@
   const button = document.getElementById('submit-button');
   const buttonLabel = button.querySelector('span');
   const status = document.getElementById('form-status');
-  const fields = ['name', 'phone', 'consent'];
+  const fields = ['phone', 'consent'];
   let sending = false;
   let finished = false;
   let requestId = null;
@@ -41,19 +41,17 @@
     event.preventDefault();
     if (sending || finished) return;
     fields.forEach(id => fieldError(id, ''));
-    const name = form.elements.name.value.trim().replace(/\s+/g, ' ');
     const phone = phoneNumber(form.elements.phone.value);
     const errors = {};
-    if (!/^[\p{L}\p{M}][\p{L}\p{M} .’'\-]{1,79}$/u.test(name)) errors.name = 'Укажите имя — от 2 до 80 букв.';
     if (!phone) errors.phone = 'Введите российский номер телефона полностью.';
-    if (!form.elements.consent.checked) errors.consent = 'Для записи необходимо ваше согласие.';
+    if (!form.elements.consent.checked) errors.consent = 'Для отправки данных необходимо ваше согласие.';
     if (Object.keys(errors).length) {
       Object.entries(errors).forEach(([id, text]) => fieldError(id, text));
       document.getElementById(Object.keys(errors)[0]).focus();
       return;
     }
     if (form.dataset.demo === 'true') {
-      message('Это демонстрация формы. Заявка не отправлена; для записи обратитесь к менеджеру автосалона.', 'pending');
+      message('Это демонстрация формы. Данные не отправлены; обратитесь к менеджеру автосалона.', 'pending');
       return;
     }
     sending = true;
@@ -68,7 +66,7 @@
       const session = await sessionResponse.json();
       if (!sessionResponse.ok || !session.csrf) throw new Error('session');
       if (!requestId) requestId = crypto.randomUUID ? crypto.randomUUID() : Array.from(crypto.getRandomValues(new Uint8Array(16)), n => n.toString(16).padStart(2, '0')).join('');
-      const payload = new URLSearchParams({ name, phone, consent: '1', website: form.elements.website.value, csrf: session.csrf, request_id: requestId });
+      const payload = new URLSearchParams({ phone, consent: '1', website: form.elements.website.value, csrf: session.csrf, request_id: requestId });
       const response = await fetch('api.php', { method: 'POST', credentials: 'same-origin', headers: { Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }, body: payload, signal: controller.signal });
       const result = await response.json();
       if (!response.ok || result.ok !== true) {
@@ -77,8 +75,8 @@
         return;
       }
       finished = true;
-      buttonLabel.textContent = 'Запись отправлена';
-      message('Спасибо! Ваша запись передана в автосалон. Приятной поездки!', 'success');
+      buttonLabel.textContent = 'Данные отправлены';
+      message('Спасибо! Ваши данные переданы в автосалон.', 'success');
       form.querySelectorAll('input').forEach(input => input.disabled = true);
     } catch (_) {
       message('Не удалось подтвердить отправку. Проверьте соединение и попробуйте ещё раз или обратитесь к менеджеру.');
@@ -87,7 +85,7 @@
       sending = false;
       button.removeAttribute('aria-busy');
       button.disabled = finished;
-      if (!finished) buttonLabel.textContent = 'Записаться на тест-драйв';
+      if (!finished) buttonLabel.textContent = 'Отправить данные';
     }
   });
 })();

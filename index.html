@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#2447df">
-  <meta name="description" content="Запись на тест-драйв в автосалоне Автолиги. Впереди — новые впечатления.">
+  <meta name="description" content="Верификация клиента в автосалоне Автолиги. Впереди - новые впечатления.">
   <meta name="robots" content="noindex, nofollow">
-  <title>Запись на тест-драйв — Автолига</title>
+  <title>Верификация клиента — Автолига</title>
   <link rel="icon" href="assets/favicon.png" type="image/png" sizes="300x300">
   <link rel="preload" href="assets/fonts/oswald-bold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/golos-regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="styles.css?v=20261110-favicon">
   <script src="phone-mask.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=20261110-verification" defer></script>
 </head>
 <body>
   <div class="page">
@@ -20,13 +20,8 @@
       <a href="https://avtoliga-group.ru/" aria-label="Автолига — основной сайт"><img class="brand-logo" src="assets/logo.svg" width="170" height="33" alt="Автолига"></a>
     </header>
     <main>
-      <h1>Запись на<br>тест-драйв</h1>
+      <h1>Верификация<br>клиента</h1>
       <form id="test-drive-form" data-demo="true" action="#" method="post" novalidate>
-        <div class="field">
-          <label for="name">Имя</label>
-          <input id="name" name="name" type="text" placeholder="Как к вам обращаться" autocomplete="given-name" maxlength="80" required aria-describedby="name-error">
-          <p class="field-error" id="name-error" hidden></p>
-        </div>
         <div class="field">
           <label for="phone">Номер телефона</label>
           <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" maxlength="24" required aria-describedby="phone-error">
@@ -40,7 +35,7 @@
           <p class="field-error" id="consent-error" hidden></p>
         </div>
         <div class="honeypot" aria-hidden="true"><label for="website">Оставьте поле пустым</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-        <button class="button button-primary" id="submit-button" type="submit"><span>Записаться на тест-драйв</span><img src="assets/arrow-light.svg" width="20" height="20" alt="" aria-hidden="true"></button>
+        <button class="button button-primary" id="submit-button" type="submit"><span>Отправить данные</span><img src="assets/arrow-light.svg" width="20" height="20" alt="" aria-hidden="true"></button>
         <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
         <noscript><p class="form-status">Для отправки формы включите JavaScript или обратитесь к менеджеру автосалона.</p></noscript>
       </form>
@@ -48,7 +43,7 @@
         <img class="ride-photo" src="assets/test-drive-moment.jpg" width="1080" height="810" alt="Улыбающаяся девушка подмигивает рядом с графитовым автомобилем у автосалона" decoding="async">
         <div class="ride-caption">
           <h2 id="ride-heading">Приятной поездки!</h2>
-          <p>Впереди — новые впечатления.<br>Почувствуйте автомобиль за рулём.</p>
+          <p>Впереди - новые впечатления.<br>Надеемся, что вам всё понравится 🙂</p>
         </div>
       </section>
       <section class="benefits" aria-labelledby="benefits-heading">
