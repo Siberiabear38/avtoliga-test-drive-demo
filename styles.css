@@ -5,7 +5,7 @@
 *{box-sizing:border-box}
 html{min-height:100%;overflow-x:clip}
 body{margin:0;min-height:100%;overflow-x:clip}
-.page{width:100%;max-width:390px;min-height:100svh;margin-inline:auto;background:var(--paper)}
+.page{width:100%;min-height:100svh;margin-inline:auto;background:var(--paper)}
 .brand-header{height:80px;display:flex;align-items:center;justify-content:center;padding-inline:24px;background:var(--blue)}
 .brand-header a{display:inline-flex;color:var(--paper);border-radius:2px;--focus:var(--paper)}
 .brand-logo{display:block;width:170px;height:33px}
@@ -49,6 +49,6 @@ a{color:inherit;text-underline-offset:2px}
 .benefit img{flex:0 0 24px}
 [hidden]{display:none!important}
 ::selection{background:var(--blue);color:var(--paper)}
-@media(min-width:600px){body{padding-block:28px}.page{min-height:calc(100svh - 56px);border-radius:12px;box-shadow:0 12px 48px rgb(19 26 44 / .08);overflow:clip}}
+@media(min-width:600px){body{padding-block:28px}.page{max-width:390px;min-height:calc(100svh - 56px);border-radius:12px;box-shadow:0 12px 48px rgb(19 26 44 / .08);overflow:clip}}
 @media(max-width:359px){main{padding-inline:18px}.brand-header{padding-inline:18px}.benefit{padding:9px;font-size:13px;line-height:19px}.ride-card h2{font-size:22px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.button:hover img,.button:active{transform:none}}
