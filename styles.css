@@ -35,7 +35,6 @@ a{color:inherit;text-underline-offset:2px}
 .form-status{padding:12px 14px;border:1px solid currentColor;border-radius:4px}
 .form-status[data-state="success"]{color:var(--success)}
 .form-status[data-state="pending"]{color:var(--muted)}
-.demo-notice{color:var(--muted);font-size:12px;line-height:18px}
 .honeypot{position:absolute;width:1px;height:1px;overflow:clip;clip-path:inset(50%);white-space:nowrap}
 .ride-card{margin-top:24px;overflow:clip;border-radius:12px;background:var(--blue);color:var(--paper)}
 .ride-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#dbe1e6}
